@@ -29,17 +29,9 @@ using UnityEngine;
      void Start() { 
         for(int i = 0; i < num; i++){
             Instantiate(playerIcons[i],playerIconPositions[i], Quaternion.identity);
-            //Instantiate(shurikenIcon,shurikenIconPositions[i], Quaternion.identity);
-            // Instantiate(lifeIcon, lifeIconPositions[i], Quaternion.identity);
-            // Instantiate(lifeIcon, lifeIconPositions[i + 4], Quaternion.identity);
-            // Instantiate(lifeIcon, lifeIconPositions[i + 8], Quaternion.identity);
-
-
         }
-
-
-
      }
+
 
      void OnGUI() {
         for(int i = 0; i < num ; i++){            
