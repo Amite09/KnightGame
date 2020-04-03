@@ -45,7 +45,7 @@ public class Spawn : MonoBehaviour
          Vector2 pos = new Vector2 (Random.Range (xMin, xMax), Random.Range (yMin, yMax));
  
          // Choose a new pickable to spawn from the array
-         GameObject goodsPrefab = pickables [Random.Range (0, pickables.Length)];
+         GameObject goodsPrefab = pickables[Random.Range (0, pickables.Length)];
  
          // Creates the random object at the random 2D position.
          Instantiate (goodsPrefab, pos, transform.rotation);

@@ -1028,6 +1028,47 @@ PrefabInstance:
       propertyPath: m_Name
       value: Spawner
       objectReference: {fileID: 0}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[0]
+      value: 
+      objectReference: {fileID: 4810789114372633424, guid: b0a4f72eca2124147a2bded54d8fcd36,
+        type: 3}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[1]
+      value: 
+      objectReference: {fileID: 5257514870531514105, guid: 77d2d8b571e3fbc4782d2f45c402eab5,
+        type: 3}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[2]
+      value: 
+      objectReference: {fileID: 7049551672564265438, guid: a83b87db3fbdaca41acc7fec974f1ecd,
+        type: 3}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[3]
+      value: 
+      objectReference: {fileID: 4577907563555022706, guid: a9aacc43014458b4c9b454eb7eb7f6db,
+        type: 3}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[4]
+      value: 
+      objectReference: {fileID: 4876679563470235262, guid: a71349f05221472449091939decee99f,
+        type: 3}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[5]
+      value: 
+      objectReference: {fileID: 3337328165866761437, guid: 12d938269cbb0fe4e9bc3742ecca8d3a,
+        type: 3}
     - target: {fileID: 3076521753965768014, guid: b36f649f57b64104b9017d268667aeef,
         type: 3}
       propertyPath: m_LocalPosition.x
