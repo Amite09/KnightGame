@@ -6,7 +6,6 @@ public class Heart : MonoBehaviour
 {
 
     private int i = 0;
-
     void OnTriggerEnter2D(Collider2D col){
         if(i == 0){
             if(col.transform.root.TryGetComponent(out Knight taker)){

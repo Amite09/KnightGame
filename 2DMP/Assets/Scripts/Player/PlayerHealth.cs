@@ -15,12 +15,13 @@ public class PlayerHealth : MonoBehaviour
         player = GetComponent<Knight>();
     }
 
-    void OnTriggerEnter2D(Collider2D col){
 
+    void OnTriggerEnter2D(Collider2D col){
+        //Ignore collision with other players
         if (col.transform.root.TryGetComponent(out Knight otherPlayer) && !otherPlayer.attacking){
         Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), col.GetComponent<BoxCollider2D>());
         }
-
+        //Checks if the player is alive after getting hit.
         if((col.transform.root.TryGetComponent(out Shuriken star) && star.Owner != player.name) || 
             (col.transform.root.TryGetComponent(out Flame fireAttack) && fireAttack.Owner != player.name)){
                 StartCoroutine(checkIfAlive());
@@ -30,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
         } 
 
     }
-
+    //Chech if the player is alive
     IEnumerator checkIfAlive(){
         if(player.hp <= 0 && i == 0){
             i = 1;
@@ -43,6 +44,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
+    //apply damage to a player
     public void applyDamage(float damage){
         player.hp -= damage;
         player.hp = (player.hp < 0 ? 0 : player.hp);

@@ -22,12 +22,6 @@ public class Shuriken : MonoBehaviour
         StartCoroutine(DisableShuriken(5f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void FixedUpdate(){
         if (canMove)
             Move();

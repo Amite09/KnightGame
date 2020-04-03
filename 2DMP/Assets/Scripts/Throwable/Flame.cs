@@ -8,17 +8,13 @@ public class Flame : MonoBehaviour
     private bool canMove = true;
     public float power;
     private string owner;
+    
     // Start is called before the first frame update
     void Start()
     {
         StartCoroutine(DisableFlame(5f));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
 
     void FixedUpdate(){
         if (canMove)

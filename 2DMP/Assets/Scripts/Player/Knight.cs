@@ -34,6 +34,7 @@ public class Knight : MonoBehaviour
 
     }
 
+    //When player falls from map (down) he gets a boost back up
     void OnBecameInvisible () {
         if(this.transform.root.localPosition.y < -12 && this.transform.root.GetComponent<Knight>().isAlive){
             this.transform.root.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 25, 0);
@@ -49,28 +50,32 @@ public class Knight : MonoBehaviour
 
     }
 
+    //Buffs the player when he gets a super power up
     void checkSuper(){
         if(isSuper && i == 0){
             i = 1;
             Buff();
-            StartCoroutine(DisableSuper(10f));
+            StartCoroutine(DisableSuper());
         }
     }
 
-    IEnumerator DisableSuper(float timer){
-        yield return new WaitForSeconds(timer);
+    //Disable super after 10sec
+    IEnumerator DisableSuper(){
+        yield return new WaitForSeconds(10f);
         isSuper = false;
         Debuff();
         i = 0;
     }
 
-
+    //Add buffs when player is super
     void Buff(){
         this.power += 3f;
         this.speed += 3f;
-        this.hp = this.maxHP;
+        this.hp += this.maxHP * 0.5f;
+        this.hp = (this.hp < this.maxHP ? this.hp : this.maxHP);
     }
 
+    //Disable buffs;
     void Debuff(){
         this.power -= 3f;
         this.speed -= 3f;

@@ -15,10 +15,8 @@ public class Sword : MonoBehaviour
         owner = player.name;
     }
 
+    //Called when the sword is hitting something
     void OnTriggerEnter2D(Collider2D col){
-        // if (col.tag != "Player"){
-        //     return;
-        // }
         string colName = col.transform.root.name;
         if(col.transform.root.TryGetComponent(out Knight enemy) && colName != this.owner && player.attacking && !alreadyHit){
             float damage = UnityEngine.Random.Range(3,6) * player.power;

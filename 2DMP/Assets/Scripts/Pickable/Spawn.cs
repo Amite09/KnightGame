@@ -5,7 +5,7 @@ using UnityEngine;
 public class Spawn : MonoBehaviour
 {
      //Array of objects to spawn (note I've removed the private goods variable)
-     public GameObject[] theGoodies;
+     public GameObject[] pickables;
  
      //Time it takes to spawn theGoodies
      [Space(3)]
@@ -44,15 +44,12 @@ public class Spawn : MonoBehaviour
          // Defines the min and max ranges for x and y
          Vector2 pos = new Vector2 (Random.Range (xMin, xMax), Random.Range (yMin, yMax));
  
-         // Choose a new goods to spawn from the array (note I specifically call it a 'prefab' to avoid confusing myself!)
-         GameObject goodsPrefab = theGoodies [Random.Range (0, theGoodies.Length)];
+         // Choose a new pickable to spawn from the array
+         GameObject goodsPrefab = pickables [Random.Range (0, pickables.Length)];
  
          // Creates the random object at the random 2D position.
          Instantiate (goodsPrefab, pos, transform.rotation);
- 
-         // If I wanted to get the result of instantiate and fiddle with it, I might do this instead:
-         //GameObject newGoods = (GameObject)Instantiate(goodsPrefab, pos)
-         //newgoods.something = somethingelse;
+
      }
  }
 

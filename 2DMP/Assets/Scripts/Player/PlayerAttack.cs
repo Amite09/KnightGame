@@ -13,17 +13,10 @@ public class PlayerAttack : MonoBehaviour
     private bool throwButton;
     public int attackType;
 
-
+    // Awake is called before the first frame
     void Awake() {
         anim = this.transform.Find("model").GetComponent<Animator>();
         player = GetComponent<Knight>();
-    }
-
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -34,7 +27,6 @@ public class PlayerAttack : MonoBehaviour
     }
 
     void PlayerMelee(){
-
         switch (this.name){
             case "Player 1(Clone)":
                 meleeButton = Input.GetKeyDown(KeyCode.Z);

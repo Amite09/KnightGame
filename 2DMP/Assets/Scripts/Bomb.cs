@@ -27,6 +27,7 @@ public class Bomb : MonoBehaviour
         bombHit();
     }
 
+    //Damages a player that was hit
     void OnTriggerEnter2D(Collider2D col){
         if (col.transform.root.TryGetComponent(out Knight toucher) && !toucher.attacking && toucher.name != hitter){
             float damage = (body.velocity.magnitude  * this.power) * 0.2f;
@@ -34,6 +35,7 @@ public class Bomb : MonoBehaviour
         }
     } 
 
+    //Called when the bomb is hit with a sword
     void bombHit() {
         if(hit){
             body.velocity = new Vector2(currentAngle.x * sign, currentAngle.y);
@@ -46,6 +48,7 @@ public class Bomb : MonoBehaviour
          hit = false;
      }
 
+    //Relocationing the bomb if it fell of the map
      void OnBecameInvisible() {
          if (body.position.y < -14){
              sr.color = new Color(1,1,1,1); 

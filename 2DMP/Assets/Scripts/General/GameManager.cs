@@ -11,8 +11,10 @@ public class GameManager : MonoBehaviour
     public string winner;
     public bool gameOver = false;
 
-
     void Awake(){
+        if (NumberOfPlayers.num == 0){
+            NumberOfPlayers.num = 2;
+        }
 
     }
     // Start is called before the first frame update
@@ -39,6 +41,7 @@ public class GameManager : MonoBehaviour
         checkIfWon();
     }
 
+    //Updates the Health/Lives Count/# of shurikens each frame. 
     void updatePlayers(){
         for(int i = 0; i < NumberOfPlayers.num; i++){
             HealthBar.health[i] = Players[i].GetComponent<Knight>().hp / Players[i].GetComponent<Knight>().maxHP;
@@ -47,6 +50,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //Checks if only one active player remained.
     void checkIfWon(){
         if(!gameOver){
             foreach(GameObject p in Players){
@@ -65,6 +69,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //Change to a random map after the game is over
     IEnumerator switchMap(float timer){
         Maps.chosenMap = (System.DateTime.Now.Millisecond % Maps.maps.GetLength(0));
         Debug.Log("The winner is: " + winner);
@@ -72,6 +77,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Map" + Maps.chosenMap);
     }
 
+    //Sends a respawn command to a dead player if he has lives left    
     void checkAlive(){
         for(int i = 0; i < NumberOfPlayers.num; i++){
             if (!Players[i].GetComponent<Knight>().isAlive && Players[i].GetComponent<Knight>().j == 0 && Players[i].GetComponent<Knight>().lives > 0){
@@ -83,6 +89,7 @@ public class GameManager : MonoBehaviour
 
     }
 
+    //Respawns the player
     IEnumerator Resurrect(Knight player, int index){
         yield return new WaitForSeconds(5f);
         player.gameObject.SetActive(true);

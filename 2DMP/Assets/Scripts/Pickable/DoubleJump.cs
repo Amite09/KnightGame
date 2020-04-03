@@ -14,6 +14,5 @@ public class DoubleJump : MonoBehaviour
                 this.gameObject.SetActive(false);
             }
         }
-
     }
 }
