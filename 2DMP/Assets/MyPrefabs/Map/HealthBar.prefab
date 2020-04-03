@@ -1,0 +1,158 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2633227157209304850
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2633227157209304848}
+  - component: {fileID: 2633227157209304849}
+  m_Layer: 0
+  m_Name: HealthBar
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2633227157209304848
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633227157209304850}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.4908876, y: 1.7308613, z: -1034.5625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2633227157209304849
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633227157209304850}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ebc85f22d916747af62ef31e82fe18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerIcons:
+  - {fileID: 4298882427646472706, guid: c5291d6ec2687474eb5f3f3487db77c9, type: 3}
+  - {fileID: 4721936898877999560, guid: f7983e7c29da9fb4cba62372aef64674, type: 3}
+  - {fileID: 2775609258979262583, guid: f15d246caae1ff9408f47b1972f2e653, type: 3}
+  - {fileID: 6012641234646678929, guid: 3ca052be0209dcd4f96bf8eaf1ce3277, type: 3}
+  playerIconPositions:
+  - {x: -25, y: 17}
+  - {x: 25, y: 17}
+  - {x: -25, y: -9.5}
+  - {x: 25, y: -9.5}
+  shurikenIcon: {fileID: 7149586529248035572, guid: 84da2500abe5a5a419676ac381040f9e,
+    type: 3}
+  shurikenIconPositions:
+  - {x: -25, y: 15.2}
+  - {x: 23, y: 15}
+  - {x: -25, y: -11.5}
+  - {x: 23, y: -11.5}
+  lifeIcon: {fileID: 7052734356722297377, guid: 4042d332b8b37e34a85915927981a47c,
+    type: 3}
+  lifeIconPositions:
+  - {x: -24, y: 17}
+  - {x: 24, y: 17}
+  - {x: -24, y: -9.5}
+  - {x: 24, y: -9.5}
+  - {x: -23.25, y: 17}
+  - {x: 23.25, y: 17}
+  - {x: -23.25, y: -9.5}
+  - {x: 23.25, y: -9.5}
+  - {x: -22.5, y: 17}
+  - {x: 22.5, y: 17}
+  - {x: -22.5, y: -9.5}
+  - {x: 22.5, y: -9.5}
+  barDisplay:
+  - 1
+  - 1
+  - 1
+  - 1
+  shurikenCount: 32000000320000003200000032000000
+  pos:
+  - {x: 20, y: 40}
+  - {x: 1750, y: 40}
+  - {x: 20, y: 1000}
+  - {x: 1750, y: 1000}
+  size: {x: 150, y: 30}
+  emptyTex: {fileID: 0}
+  fullTex: {fileID: 0}
+  numFont:
+    m_Name: 
+    m_Normal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Hover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Active:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Focused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnNormal:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnHover:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnActive:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_OnFocused:
+      m_Background: {fileID: 0}
+      m_ScaledBackgrounds: []
+      m_TextColor: {r: 0, g: 0, b: 0, a: 1}
+    m_Border:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Margin:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Padding:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Overflow:
+      m_Left: 0
+      m_Right: 0
+      m_Top: 0
+      m_Bottom: 0
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 50
+    m_FontStyle: 0
+    m_Alignment: 0
+    m_WordWrap: 0
+    m_RichText: 1
+    m_TextClipping: 0
+    m_ImagePosition: 0
+    m_ContentOffset: {x: 0, y: 0}
+    m_FixedWidth: 0
+    m_FixedHeight: 0
+    m_StretchWidth: 1
+    m_StretchHeight: 0
