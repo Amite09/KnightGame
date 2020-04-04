@@ -19,13 +19,13 @@ public class Sword : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col){
         string colName = col.transform.root.name;
         if(col.transform.root.TryGetComponent(out Knight enemy) && colName != this.owner && player.attacking && !alreadyHit){
-            float damage = UnityEngine.Random.Range(3,6) * player.power;
-            alreadyHit = true;
+            float damage = UnityEngine.Random.Range(1,3) * player.power;
+            //alreadyHit = true;
             enemy.GetComponent<PlayerHealth>().applyDamage(damage);
             enemy.GetComponent<PlayerControl>().currentKnockback = knockbacks[player.GetComponent<PlayerAttack>().attackType - 1];
             enemy.GetComponent<PlayerControl>().sign = Math.Sign(player.transform.localScale.x) * (-1);
             enemy.GetComponent<PlayerControl>().knockedBack = true;
-            StartCoroutine(hit(0.5f));
+            //StartCoroutine(hit(0.5f));
         } else if (col.transform.root.TryGetComponent(out Bomb bomb) && player.attacking && !alreadyHit)  {
             alreadyHit = true;
             bomb.currentAngle = knockbacks[player.GetComponent<PlayerAttack>().attackType - 1];

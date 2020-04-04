@@ -3,9 +3,9 @@ using System.Linq;
 using System.Collections.Generic;
 using UnityEngine;
 
-   public class HealthBarGUI : MonoBehaviour {
+   public class HealthBarUI : MonoBehaviour {
      public static int num;
-     public GameObject[] playerIcons = new GameObject[4];
+     public Texture2D[] playerIcons = new Texture2D[4];
      public Vector2[] playerIconPositions = new Vector2[4];
      public GameObject shurikenIcon;
      public Vector2[] shurikenIconPositions = new Vector2[4];
@@ -21,20 +21,26 @@ using UnityEngine;
      public GUIStyle numFont;
 
      void Awake() {
-        num = NumberOfPlayers.num;
         fullTex = new Texture2D(200,30);
         InitStyles();
      }
 
      void Start() { 
+        num = NumberOfPlayers.num;
         for(int i = 0; i < num; i++){
-            Instantiate(playerIcons[i],playerIconPositions[i], Quaternion.identity);
+            //Instantiate(playerIcons[i],playerIconPositions[i], Quaternion.identity);      
         }
+        getPositions();
+
+
      }
 
 
      void OnGUI() {
-        for(int i = 0; i < num ; i++){            
+        for(int i = 0; i < num ; i++){  
+
+            GUI.DrawTexture(new Rect(pos[i].x + size.x/3, pos[i].y - 50, playerIcons[i].width/2, playerIcons[i].height/2), playerIcons[i]);
+
             //draw the background
             GUI.BeginGroup(new Rect(pos[i].x, pos[i].y, size.x, size.y));
                 GUI.Box(new Rect(0,0, size.x, size.y), emptyTex);
@@ -48,9 +54,6 @@ using UnityEngine;
             GUI.Label(new Rect(pos[i].x + 60, pos[i].y + 20, size.x, size.y), livesCount[i].ToString(), numFont);
 
         }
-
-
-
      }
 
     void InitStyles(){
@@ -61,7 +64,7 @@ using UnityEngine;
             }
         }
         fullTex.Apply();
-    }
+        }
 
      void Update() {
         for(int j = 0; j < num; j++){
@@ -70,4 +73,10 @@ using UnityEngine;
             livesCount[j] = PlayerLives.livesCount[j];
         }
      }
- }
+
+    void getPositions(){
+        pos[1] = new Vector2(Screen.width - pos[0].x - size.x, pos[0].y);
+        pos[2] = new Vector2(pos[0].x,Screen.height - pos[0].y - size.y);
+        pos[3] = new Vector2(Screen.width - pos[0].x - size.x,Screen.height - pos[0].y - size.y);
+    }
+    }

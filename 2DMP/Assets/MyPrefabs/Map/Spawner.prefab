@@ -43,16 +43,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb8eeeedd4f094342afd54d33717ff7d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  theGoodies:
+  pickables:
   - {fileID: 3337328165866761437, guid: 12d938269cbb0fe4e9bc3742ecca8d3a, type: 3}
   - {fileID: 4876679563470235262, guid: a71349f05221472449091939decee99f, type: 3}
   - {fileID: 4577907563555022706, guid: a9aacc43014458b4c9b454eb7eb7f6db, type: 3}
-  - {fileID: 7049551672564265438, guid: a83b87db3fbdaca41acc7fec974f1ecd, type: 3}
   - {fileID: 4810789114372633424, guid: b0a4f72eca2124147a2bded54d8fcd36, type: 3}
   - {fileID: 5257514870531514105, guid: 77d2d8b571e3fbc4782d2f45c402eab5, type: 3}
   waitingForNextSpawn: 10
   theCountdown: 10
   xMin: -25
   xMax: 25
-  yMin: 18
-  yMax: -6
+  yMin: 0
+  yMax: 18

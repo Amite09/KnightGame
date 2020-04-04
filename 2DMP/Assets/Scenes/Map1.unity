@@ -2038,6 +2038,75 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &421053107
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.87
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 14.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613748, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3435169832778613754, guid: a2760dad72039c3438001c0638364f1d,
+        type: 3}
+      propertyPath: m_Name
+      value: bomb
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a2760dad72039c3438001c0638364f1d, type: 3}
 --- !u!1 &432375161
 GameObject:
   m_ObjectHideFlags: 0
@@ -2631,11 +2700,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 2.76, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 2.1364877, y: 1.3565, z: 1.3565}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &519420033
 BoxCollider2D:
@@ -5089,55 +5158,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
         type: 3}
-      propertyPath: pickables.Array.size
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
       propertyPath: yMin
-      value: 0
+      value: -4
       objectReference: {fileID: 0}
     - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
         type: 3}
       propertyPath: yMax
-      value: 18
+      value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
-      propertyPath: pickables.Array.data[0]
-      value: 
-      objectReference: {fileID: 3337328165866761437, guid: 12d938269cbb0fe4e9bc3742ecca8d3a,
-        type: 3}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
-      propertyPath: pickables.Array.data[1]
-      value: 
-      objectReference: {fileID: 4876679563470235262, guid: a71349f05221472449091939decee99f,
-        type: 3}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
-      propertyPath: pickables.Array.data[2]
-      value: 
-      objectReference: {fileID: 4577907563555022706, guid: a9aacc43014458b4c9b454eb7eb7f6db,
-        type: 3}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
-      propertyPath: pickables.Array.data[3]
-      value: 
-      objectReference: {fileID: 7049551672564265438, guid: a83b87db3fbdaca41acc7fec974f1ecd,
-        type: 3}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
-      propertyPath: pickables.Array.data[4]
-      value: 
-      objectReference: {fileID: 5257514870531514105, guid: 77d2d8b571e3fbc4782d2f45c402eab5,
-        type: 3}
-    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
-        type: 3}
-      propertyPath: pickables.Array.data[5]
-      value: 
-      objectReference: {fileID: 4810789114372633424, guid: b0a4f72eca2124147a2bded54d8fcd36,
-        type: 3}
     - target: {fileID: 3076521753965768014, guid: b36f649f57b64104b9017d268667aeef,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8639,12 +8667,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052793480}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.59, y: 2.79, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2.92, y: 4.9, z: 1}
   m_Children:
   - {fileID: 1425414308}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2072324260
 GameObject:

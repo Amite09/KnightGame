@@ -44,15 +44,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerIcons:
-  - {fileID: 4298882427646472706, guid: c5291d6ec2687474eb5f3f3487db77c9, type: 3}
-  - {fileID: 4721936898877999560, guid: f7983e7c29da9fb4cba62372aef64674, type: 3}
-  - {fileID: 2775609258979262583, guid: f15d246caae1ff9408f47b1972f2e653, type: 3}
-  - {fileID: 6012641234646678929, guid: 3ca052be0209dcd4f96bf8eaf1ce3277, type: 3}
+  - {fileID: 2800000, guid: 90199656f71725f458ea3f86658c3e4f, type: 3}
+  - {fileID: 2800000, guid: 95c27ddbc1acda54a9bb2c4326f190ce, type: 3}
+  - {fileID: 2800000, guid: 16c3000ed5e079144862a7e4319872e8, type: 3}
+  - {fileID: 2800000, guid: b015361126b7ea445bc7926abb529b01, type: 3}
   playerIconPositions:
-  - {x: -25, y: 17}
-  - {x: 25, y: 17}
-  - {x: -25, y: -9.5}
-  - {x: 25, y: -9.5}
+  - {x: -25, y: 14.5}
+  - {x: 25, y: 14.5}
+  - {x: -25, y: -6}
+  - {x: 25, y: -6}
   shurikenIcon: {fileID: 7149586529248035572, guid: 84da2500abe5a5a419676ac381040f9e,
     type: 3}
   shurikenIconPositions:
@@ -81,11 +81,12 @@ MonoBehaviour:
   - 1
   - 1
   shurikenCount: 32000000320000003200000032000000
+  livesCount: 00000000000000000000000000000000
   pos:
-  - {x: 20, y: 40}
-  - {x: 1750, y: 40}
-  - {x: 20, y: 1000}
-  - {x: 1750, y: 1000}
+  - {x: 20, y: 60}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
+  - {x: 0, y: 0}
   size: {x: 150, y: 30}
   emptyTex: {fileID: 0}
   fullTex: {fileID: 0}
