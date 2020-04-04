@@ -644,9 +644,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knockbacks:
-  - {x: 10, y: 3}
-  - {x: 15, y: 2}
-  - {x: 5, y: 12}
+  - {x: 20, y: -10}
+  - {x: 30, y: 4}
+  - {x: 3, y: 13}
 --- !u!1 &4334228277269553882
 GameObject:
   m_ObjectHideFlags: 0

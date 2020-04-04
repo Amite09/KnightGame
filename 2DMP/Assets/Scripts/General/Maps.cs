@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Maps
 {      
-    public static int[] maps = new int[4];
+    public static int[] maps = new int[5];
     public static int chosenMap;
 
 }

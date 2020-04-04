@@ -50,11 +50,12 @@ public class Bomb : MonoBehaviour
 
     //Relocationing the bomb if it fell of the map
      void OnBecameInvisible() {
-         if (body.position.y < -14){
+         if (body.position.y < -14 || body.position.x < -27 || body.position.x > 27){
              sr.color = new Color(1,1,1,1); 
              hitter = "Nobody";
              body.velocity = new Vector2(0,0);
-             body.position = new Vector2((body.position.x < 0 ? Random.Range(-20,-10) : Random.Range(10,20)), 14);
+             body.angularVelocity = 0;
+             body.position = GameObject.Find("GameStart").GetComponent<GameManager>().PlayersPositions[Random.Range(0,NumberOfPlayers.num)];
          }
      }
 }

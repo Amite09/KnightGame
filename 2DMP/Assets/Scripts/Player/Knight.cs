@@ -36,7 +36,7 @@ public class Knight : MonoBehaviour
 
     //When player falls from map (down) he gets a boost back up
     void OnBecameInvisible () {
-        if(this.transform.root.localPosition.y < -12 && this.transform.root.GetComponent<Knight>().isAlive){
+        if(this.transform.root.localPosition.y < -17 && this.transform.root.GetComponent<Knight>().isAlive){
             this.transform.root.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 25, 0);
             this.transform.root.GetComponent<PlayerHealth>().applyDamage(25f);
         }

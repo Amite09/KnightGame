@@ -13,6 +13,7 @@ TagManager:
   - Pickable
   - Super
   - Throwable
+  - Bomb
   layers:
   - Default
   - TransparentFX

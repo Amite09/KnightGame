@@ -33,15 +33,15 @@ public class PlayerHealth : MonoBehaviour
     }
     //Chech if the player is alive
     IEnumerator checkIfAlive(){
-        if(player.hp <= 0 && i == 0){
-            i = 1;
-            this.GetComponent<BoxCollider2D>().enabled = false;
-            player.lives = (player.lives > 0 ? player.lives - 1 : 0);
-            player.isAlive = false;
-            anim.Play("Die");
-            yield return new WaitForSeconds(0.7f);
-            i = 0;
-        }
+            if(player.hp <= 0 && i == 0){
+                i = 1;
+                this.GetComponent<BoxCollider2D>().enabled = false;
+                player.lives = (player.lives > 0 ? player.lives - 1 : 0);
+                player.isAlive = false;
+                anim.Play("Die");
+                yield return new WaitForSeconds(0.7f);
+                i = 0;
+            }  
     }
 
     //apply damage to a player

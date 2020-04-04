@@ -27,14 +27,14 @@ public class Sword : MonoBehaviour
             enemy.GetComponent<PlayerControl>().knockedBack = true;
             //StartCoroutine(hit(0.5f));
         } else if (col.transform.root.TryGetComponent(out Bomb bomb) && player.attacking && !alreadyHit)  {
-            alreadyHit = true;
+            //alreadyHit = true;
             bomb.currentAngle = knockbacks[player.GetComponent<PlayerAttack>().attackType - 1];
             bomb.power = player.power;
             bomb.hitter = player.name;
             bomb.sign = Math.Sign(player.transform.localScale.x) * (-1);
             bomb.hit = true;
             bomb.GetComponent<SpriteRenderer>().color = player.transform.Find("model").Find("body").Find("Head").Find("Hat-Helmet").GetComponent<SpriteRenderer>().color;
-            StartCoroutine(hit(0.5f));
+            //StartCoroutine(hit(0.5f));
         }    
     }
 
