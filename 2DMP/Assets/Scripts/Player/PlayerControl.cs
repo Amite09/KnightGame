@@ -22,6 +22,7 @@ public class PlayerControl: MonoBehaviour
     private int direction;
 
     public bool knockedBack;
+    public float knockedBackFactor;
     public int sign = 0;
     public Vector2 currentKnockback;
     
@@ -170,13 +171,13 @@ public class PlayerControl: MonoBehaviour
 
 
     public void Knockback(Vector2 kno, int sign){
-        myBody.velocity = new Vector2(kno.x * sign, kno.y);
+        myBody.velocity = new Vector2(kno.x * sign, kno.y) * knockedBackFactor;
+         knockedBackFactor *= 0.95f;
         StartCoroutine(KnockbackPause());
-
     }
 
     IEnumerator KnockbackPause(){
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(0.3f);
         knockedBack = false;
     }
 

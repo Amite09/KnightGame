@@ -29,6 +29,16 @@ public class Bomb : MonoBehaviour
 
     //Damages a player that was hit
     void OnTriggerEnter2D(Collider2D col){
+        if (col.tag == "Pickable"){
+            Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), col);
+        }
+        if (col.transform.root.TryGetComponent(out Knight roller) && roller.GetComponent<PlayerControl>().rolled){
+            Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), roller.GetComponent<BoxCollider2D>());
+        }
+        else if (col.transform.root.TryGetComponent(out Knight nonRoller) && !nonRoller.GetComponent<PlayerControl>().rolled){
+            Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), roller.GetComponent<BoxCollider2D>(), false);
+        }
+
         if (col.transform.root.TryGetComponent(out Knight toucher) && !toucher.attacking && toucher.name != hitter){
             float damage = (body.velocity.magnitude  * this.power) * 0.2f;
             toucher.GetComponent<PlayerHealth>().applyDamage(damage);

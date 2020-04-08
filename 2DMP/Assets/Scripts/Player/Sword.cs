@@ -23,6 +23,7 @@ public class Sword : MonoBehaviour
             //alreadyHit = true;
             enemy.GetComponent<PlayerHealth>().applyDamage(damage);
             enemy.GetComponent<PlayerControl>().currentKnockback = knockbacks[player.GetComponent<PlayerAttack>().attackType - 1];
+            enemy.GetComponent<PlayerControl>().knockedBackFactor = 1;
             enemy.GetComponent<PlayerControl>().sign = Math.Sign(player.transform.localScale.x) * (-1);
             enemy.GetComponent<PlayerControl>().knockedBack = true;
             //StartCoroutine(hit(0.5f));
