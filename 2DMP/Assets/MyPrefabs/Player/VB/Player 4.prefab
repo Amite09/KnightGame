@@ -90,7 +90,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6090590715888409749}
   - component: {fileID: 6092334772354623146}
-  - component: {fileID: 6656163495484874867}
+  - component: {fileID: 4059106439125760878}
   m_Layer: 9
   m_Name: Weapon
   m_TagString: Sword
@@ -139,7 +139,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18943113, y: 0.71573246}
   m_EdgeRadius: 0
---- !u!114 &6656163495484874867
+--- !u!114 &4059106439125760878
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,7 +148,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 6092334772354623149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064344950775b944a87cc1dfa73ef46a, type: 3}
+  m_Script: {fileID: 11500000, guid: 68b76fa6e24dec749a5b8581d2c3f54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbacks:
@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 6091386412227228335}
   - component: {fileID: 1683439238352243918}
   - component: {fileID: 2342547590493915987}
+  - component: {fileID: -7856048258599479677}
   m_Layer: 9
   m_Name: Player 4
   m_TagString: Player
@@ -315,6 +316,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.001, y: 0.001}
   m_Direction: 0
+--- !u!114 &-7856048258599479677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6092417283030580449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197abac1041a5ee448955b1fb3b4b392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6092654980917743801
 GameObject:
   m_ObjectHideFlags: 0
@@ -636,7 +649,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6093028739153432289}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0.05, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6090590715888409749}
@@ -680,8 +693,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 066cc7941702be2409b4c86b8dac4ea9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 48a93cc4e286eb74eab66783cd35b99d, type: 3}
+  m_Color: {r: 0.3490566, g: 0.18934675, b: 0.2092133, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

@@ -6,6 +6,7 @@ public class Helper
 {
 
     public static int[] maps = new int[5];
+    public static int[] VBmaps = new int[1];
     public static int chosenMap;
 
     public static int numOfPlayers = 0;

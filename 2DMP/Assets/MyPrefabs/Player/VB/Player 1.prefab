@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8132149704790326203}
   - component: {fileID: 8129418289839604100}
-  - component: {fileID: 8647577040885466973}
+  - component: {fileID: 4778583687123274544}
   m_Layer: 9
   m_Name: Weapon
   m_TagString: Sword
@@ -413,7 +413,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.18943113, y: 0.71573246}
   m_EdgeRadius: 0
---- !u!114 &8647577040885466973
+--- !u!114 &4778583687123274544
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -422,7 +422,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8129418289839604099}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 064344950775b944a87cc1dfa73ef46a, type: 3}
+  m_Script: {fileID: 11500000, guid: 68b76fa6e24dec749a5b8581d2c3f54f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   knockbacks:
@@ -444,6 +444,7 @@ GameObject:
   - component: {fileID: 8130650192030520705}
   - component: {fileID: 3675478255528422368}
   - component: {fileID: 4065493173482084577}
+  - component: {fileID: 902297224723257882}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -589,6 +590,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.001, y: 0.001}
   m_Direction: 0
+--- !u!114 &902297224723257882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8129474326354058191}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197abac1041a5ee448955b1fb3b4b392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8129796836739289589
 GameObject:
   m_ObjectHideFlags: 0
@@ -843,7 +856,7 @@ GameObject:
   - component: {fileID: 8126098039730038143}
   - component: {fileID: 8224960468108762077}
   m_Layer: 9
-  m_Name: Weapon-Sword
+  m_Name: Weapon-Bat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -857,7 +870,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8130094320871909839}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.5}
+  m_LocalPosition: {x: 0.05, y: 0.48, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8132149704790326203}
@@ -901,12 +914,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 066cc7941702be2409b4c86b8dac4ea9, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 48a93cc4e286eb74eab66783cd35b99d, type: 3}
+  m_Color: {r: 0.3490566, g: 0.18934675, b: 0.2092133, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.31, y: 1.1}
+  m_Size: {x: 0.41, y: 1.21}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1

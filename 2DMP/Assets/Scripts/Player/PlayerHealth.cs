@@ -17,10 +17,7 @@ public class PlayerHealth : MonoBehaviour
 
 
     void OnTriggerEnter2D(Collider2D col){
-        //Ignore collision with other players
-        if (col.transform.root.TryGetComponent(out Knight otherPlayer) && !otherPlayer.attacking){
-        Physics2D.IgnoreCollision(this.GetComponent<BoxCollider2D>(), col.GetComponent<BoxCollider2D>());
-        }
+        
         //Checks if the player is alive after getting hit.
         if((col.transform.root.TryGetComponent(out Shuriken star) && star.Owner != player.name) || 
             (col.transform.root.TryGetComponent(out Flame fireAttack) && fireAttack.Owner != player.name)){

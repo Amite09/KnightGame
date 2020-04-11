@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
+using TMPro;
 
 public class Menu : MonoBehaviour
 {
 
     public void PlayGame(){
         
-        Helper.chosenMap = (System.DateTime.Now.Millisecond % Helper.maps.GetLength(0));
-        Debug.Log(Helper.chosenMap);
+
 
         switch (EventSystem.current.currentSelectedGameObject.name){
             case "2P":
@@ -24,8 +24,19 @@ public class Menu : MonoBehaviour
                 break;          
         } 
 
-        SceneManager.LoadScene("Map" + Helper.chosenMap);
+        if(transform.Find("switchButton").Find("value").GetComponent<TextMeshProUGUI>().text == "ON"){
+            Helper.chosenMap = (System.DateTime.Now.Millisecond % Helper.VBmaps.GetLength(0));
+            SceneManager.LoadScene("VBMap" + Helper.chosenMap);
+        } else {
+            Helper.chosenMap = (System.DateTime.Now.Millisecond % Helper.maps.GetLength(0));
+            SceneManager.LoadScene("Map" + Helper.chosenMap);
+        }
 
+    }
+
+    public void SwitchVB(){
+        string text = transform.Find("switchButton").Find("value").GetComponent<TextMeshProUGUI>().text;
+        transform.Find("switchButton").Find("value").GetComponent<TextMeshProUGUI>().text = (text == "OFF" ? "ON" : "OFF");
     }
 
 

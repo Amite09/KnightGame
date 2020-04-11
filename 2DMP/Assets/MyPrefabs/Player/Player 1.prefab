@@ -478,6 +478,7 @@ GameObject:
   - component: {fileID: -1853816226222152329}
   - component: {fileID: 5094906255025900651}
   - component: {fileID: -6837767482520344242}
+  - component: {fileID: -2702850375124639481}
   m_Layer: 9
   m_Name: Player 1
   m_TagString: Player
@@ -678,6 +679,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Shuriken: {fileID: 811772898791111101, guid: 7a7a7f4085b1e5c4081c5d534678cffd, type: 3}
+--- !u!114 &-2702850375124639481
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2708266304378246488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 197abac1041a5ee448955b1fb3b4b392, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2708588824529559394
 GameObject:
   m_ObjectHideFlags: 0
