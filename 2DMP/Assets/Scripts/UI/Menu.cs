@@ -9,22 +9,22 @@ public class Menu : MonoBehaviour
 
     public void PlayGame(){
         
-        Maps.chosenMap = (System.DateTime.Now.Millisecond % Maps.maps.GetLength(0));
-        Debug.Log(Maps.chosenMap);
+        Helper.chosenMap = (System.DateTime.Now.Millisecond % Helper.maps.GetLength(0));
+        Debug.Log(Helper.chosenMap);
 
         switch (EventSystem.current.currentSelectedGameObject.name){
             case "2P":
-                NumberOfPlayers.num = 2;
+                Helper.numOfPlayers = 2;
                 break;
             case "3P":
-                NumberOfPlayers.num = 3;
+                Helper.numOfPlayers = 3;
                 break; 
             case "4P":
-                NumberOfPlayers.num = 4;
+                Helper.numOfPlayers = 4;
                 break;          
         } 
 
-        SceneManager.LoadScene("Map" + Maps.chosenMap);
+        SceneManager.LoadScene("Map" + Helper.chosenMap);
 
     }
 

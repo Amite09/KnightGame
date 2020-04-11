@@ -10,7 +10,7 @@ public class Target : MonoBehaviour
         if(i == 0){
             if(col.transform.root.TryGetComponent(out Knight taker)){
                 i = 1;
-                taker.accuracy += 1f;
+                taker.accuracy += 0.5f;
                 this.gameObject.SetActive(false);
             }
         }

@@ -21,10 +21,7 @@ public class PlayerControl: MonoBehaviour
     public bool rolled;
     private int direction;
 
-    public bool knockedBack;
-    public float knockedBackFactor;
-    public int sign = 0;
-    public Vector2 currentKnockback;
+
     
     void Awake() {
         player = GetComponent<Knight>();
@@ -32,21 +29,12 @@ public class PlayerControl: MonoBehaviour
         anim = this.transform.Find("model").GetComponent<Animator>(); 
     }
 
-    // Start is called before the first frame update
-    void Start()
-    {
-    }
-
     // Update is called once per frame
-    void Update()
-    {
+    void Update(){
         PlayerWalk();
         Roll();
         CheckIfGrounded();
-        PlayerJump(); 
-        if(knockedBack)
-            Knockback(currentKnockback, sign);   
-        
+        PlayerJump();       
     }
 
     void PlayerWalk() {
@@ -170,16 +158,7 @@ public class PlayerControl: MonoBehaviour
 
 
 
-    public void Knockback(Vector2 kno, int sign){
-        myBody.velocity = new Vector2(kno.x * sign, kno.y) * knockedBackFactor;
-         knockedBackFactor *= 0.95f;
-        StartCoroutine(KnockbackPause());
-    }
 
-    IEnumerator KnockbackPause(){
-        yield return new WaitForSeconds(0.3f);
-        knockedBack = false;
-    }
 
 
     

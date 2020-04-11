@@ -381,6 +381,8 @@ MonoBehaviour:
   isAlive: 0
   maxShurikens: 0
   shurikens: 0
+  vb: 0
+  invisible: 0
   j: 0
 --- !u!1 &9128095488210980589
 GameObject:
@@ -561,6 +563,8 @@ GameObject:
   - component: {fileID: 9128095488268358991}
   - component: {fileID: 9128095488268358988}
   - component: {fileID: 9128095488268358989}
+  - component: {fileID: -4029290677523425231}
+  - component: {fileID: 4128306093986886710}
   m_Layer: 9
   m_Name: Player 2
   m_TagString: Player
@@ -639,9 +643,6 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   rolled: 0
-  knockedBack: 0
-  sign: 0
-  currentKnockback: {x: 0, y: 0}
 --- !u!61 &9128095488268358985
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -651,7 +652,7 @@ BoxCollider2D:
   m_GameObject: {fileID: 9128095488268358994}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 9e3abfae6b92d6345859e15b97a372ad, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -680,7 +681,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b157138d9542524d8a3757c83a00fa8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Shuriken: {fileID: 811772898791111101, guid: 7a7a7f4085b1e5c4081c5d534678cffd, type: 3}
   attackType: 0
 --- !u!114 &9128095488268358991
 MonoBehaviour:
@@ -720,8 +720,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 3
-  maxHP: 500
-  hp: 500
+  maxHP: 1000
+  hp: 1000
   speed: 7
   jumpPower: 17
   power: 3
@@ -733,7 +733,38 @@ MonoBehaviour:
   isAlive: 1
   maxShurikens: 50
   shurikens: 50
+  vb: 0
+  invisible: 0
   j: 0
+--- !u!114 &-4029290677523425231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128095488268358994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 940ec254b2cc75c4ab70ac380483fe19, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockedBack: 0
+  knockedBackFactor: 0
+  sign: 0
+  currentKnockback: {x: 0, y: 0}
+--- !u!114 &4128306093986886710
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9128095488268358994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65c8dfafbec1b6646aa763d42a115af6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Shuriken: {fileID: 811772898791111101, guid: 7a7a7f4085b1e5c4081c5d534678cffd, type: 3}
 --- !u!1 &9128095488484794698
 GameObject:
   m_ObjectHideFlags: 0
@@ -888,8 +919,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knockbacks:
   - {x: 20, y: -10}
-  - {x: 30, y: 4}
-  - {x: 3, y: 13}
+  - {x: 30, y: 0}
+  - {x: 0, y: 13}
 --- !u!1 &9128095488678701595
 GameObject:
   m_ObjectHideFlags: 0

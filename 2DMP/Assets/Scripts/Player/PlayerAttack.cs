@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-    public GameObject Shuriken;
     private Animator anim;
     private Knight player;
     private bool meleeButton;
     private bool meleeButton2;
     private bool meleeButton3;
-    private bool throwButton;
     public int attackType;
 
     // Awake is called before the first frame
@@ -23,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     void Update()
     {
         PlayerMelee();
-        ThrowShuriken();
+        
     }
 
     void PlayerMelee(){
@@ -76,31 +74,7 @@ public class PlayerAttack : MonoBehaviour
         yield return new WaitForSeconds(timer);
     } 
 
-    void ThrowShuriken() {
-        switch (this.name){
-            case "Player 1(Clone)":
-                throwButton = Input.GetKeyDown(KeyCode.X);
-                break;
-            case "Player 2(Clone)":
-                throwButton = Input.GetKeyDown(KeyCode.Joystick1Button2);
-                break;
-            case "Player 3(Clone)":
-                throwButton = Input.GetKeyDown(KeyCode.Joystick2Button2);
-                break;
-            case "Player 4(Clone)":
-                throwButton = Input.GetKeyDown(KeyCode.Joystick3Button2);
-                break;                
-        }
 
-        if(throwButton && player.shurikens > 0){
-            player.shurikens -= 1;
-            GameObject star = Instantiate (Shuriken, transform.position, Quaternion.identity);
-            star.GetComponent<Shuriken> ().Owner = this.name;
-            star.GetComponent<Shuriken> ().Power = player.accuracy;
-            star.GetComponent<Shuriken> ().Speed *= transform.localScale.x;
-        }
-
-    }
 
 
 }

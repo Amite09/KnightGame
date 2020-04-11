@@ -10,7 +10,7 @@ public class Heart : MonoBehaviour
         if(i == 0){
             if(col.transform.root.TryGetComponent(out Knight taker)){
                 i = 1;
-                taker.hp += 50;
+                taker.hp += 150;
                 taker.hp = (taker.hp > taker.maxHP ? taker.maxHP : taker.hp);  
                 this.gameObject.SetActive(false);
             }

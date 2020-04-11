@@ -10,7 +10,7 @@ public class PowerUp : MonoBehaviour
         if(i == 0){
             if(col.transform.root.TryGetComponent(out Knight taker)){
                 i = 1;
-                taker.power += 2f;
+                taker.power += 1f;
                 this.gameObject.SetActive(false);
             }
         }

@@ -12,25 +12,17 @@ public class GameManager : MonoBehaviour
     public bool gameOver = false;
 
     void Awake(){
-        if (NumberOfPlayers.num == 0){
-            NumberOfPlayers.num = 2;
+        if (Helper.numOfPlayers == 0){
+            Helper.numOfPlayers = 2;
         }
-
+        Helper.livesCount = new int[Helper.numOfPlayers];
+        Helper.shurikenCount = new int[Helper.numOfPlayers];
+        Helper.health = new float[Helper.numOfPlayers];
     }
     // Start is called before the first frame update
     void Start()
     {
-        Players[0] = Instantiate (Players[0], PlayersPositions[0], Quaternion.identity);
-        Players[1] = Instantiate (Players[1], PlayersPositions[1], Quaternion.identity);
-        if (NumberOfPlayers.num >= 3)
-        {
-            Players[2] = Instantiate (Players[2], PlayersPositions[2], Quaternion.identity);
-        }
-        if (NumberOfPlayers.num == 4)
-        {
-            Players[3] = Instantiate (Players[3], PlayersPositions[3], Quaternion.identity);
-        }
-      
+        InitPlayers();   
     }
 
     // Update is called once per frame
@@ -41,12 +33,20 @@ public class GameManager : MonoBehaviour
         checkIfWon();
     }
 
+
+    void InitPlayers(){
+        for(int i = 0; i < Helper.numOfPlayers; i++){
+            Players[i] = Instantiate (Players[i], PlayersPositions[i], Quaternion.identity);
+        }
+    }
+
+
     //Updates the Health/Lives Count/# of shurikens each frame. 
     void updatePlayers(){
-        for(int i = 0; i < NumberOfPlayers.num; i++){
-            HealthBar.health[i] = Players[i].GetComponent<Knight>().hp / Players[i].GetComponent<Knight>().maxHP;
-            ShurikenCounter.shurikenCount[i] = Players[i].GetComponent<Knight>().shurikens;
-            PlayerLives.livesCount[i] = Players[i].GetComponent<Knight>().lives;
+        for(int i = 0; i < Helper.numOfPlayers; i++){
+            Helper.health[i] = Players[i].GetComponent<Knight>().hp / Players[i].GetComponent<Knight>().maxHP;
+            Helper.shurikenCount[i] = Players[i].GetComponent<Knight>().shurikens;
+            Helper.livesCount[i] = Players[i].GetComponent<Knight>().lives;
         }
     }
 
@@ -71,22 +71,20 @@ public class GameManager : MonoBehaviour
 
     //Change to a random map after the game is over
     IEnumerator switchMap(float timer){
-        Maps.chosenMap = (System.DateTime.Now.Millisecond % Maps.maps.GetLength(0));
+        Helper.chosenMap = (System.DateTime.Now.Millisecond % Helper.maps.GetLength(0));
         Debug.Log("The winner is: " + winner);
         yield return new WaitForSeconds(timer);
-        SceneManager.LoadScene("Map" + Maps.chosenMap);
+        SceneManager.LoadScene("Map" + Helper.chosenMap);
     }
 
     //Sends a respawn command to a dead player if he has lives left    
     void checkAlive(){
-        for(int i = 0; i < NumberOfPlayers.num; i++){
+        for(int i = 0; i < Helper.numOfPlayers; i++){
             if (!Players[i].GetComponent<Knight>().isAlive && Players[i].GetComponent<Knight>().j == 0 && Players[i].GetComponent<Knight>().lives > 0){
                 Players[i].GetComponent<Knight>().j = 1;
                 StartCoroutine(Resurrect(Players[i].GetComponent<Knight>(), i));
             }
         }
-
-
     }
 
     //Respawns the player

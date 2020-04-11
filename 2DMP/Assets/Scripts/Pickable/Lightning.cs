@@ -11,7 +11,7 @@ public class Lightning : MonoBehaviour
         if(i == 0){
             if(col.transform.root.TryGetComponent(out Knight taker)){
                 i = 1;
-                taker.speed += 2;
+                taker.speed += 1;
                 this.gameObject.SetActive(false);
             }
         }

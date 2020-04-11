@@ -9,8 +9,6 @@ using UnityEngine;
      public Vector2[] playerIconPositions = new Vector2[4];
      public GameObject shurikenIcon;
      public Vector2[] shurikenIconPositions = new Vector2[4];
-     public GameObject lifeIcon;
-     public Vector2[] lifeIconPositions = new Vector2[12];
      public float[] barDisplay = new float[4]; //current progress
      public int[] shurikenCount = new int[4];
      public int [] livesCount = new int[4];
@@ -26,13 +24,8 @@ using UnityEngine;
      }
 
      void Start() { 
-        num = NumberOfPlayers.num;
-        for(int i = 0; i < num; i++){
-            //Instantiate(playerIcons[i],playerIconPositions[i], Quaternion.identity);      
-        }
+        num = Helper.numOfPlayers;
         getPositions();
-
-
      }
 
 
@@ -64,13 +57,13 @@ using UnityEngine;
             }
         }
         fullTex.Apply();
-        }
+    }
 
      void Update() {
         for(int j = 0; j < num; j++){
-            barDisplay[j] = HealthBar.health[j];
-            shurikenCount[j] = ShurikenCounter.shurikenCount[j];
-            livesCount[j] = PlayerLives.livesCount[j];
+            barDisplay[j] = Helper.health[j];
+            shurikenCount[j] = Helper.shurikenCount[j];
+            livesCount[j] = Helper.livesCount[j];
         }
      }
 

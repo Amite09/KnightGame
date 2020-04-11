@@ -17,7 +17,9 @@ public class Knight : MonoBehaviour
     public bool isAlive;
     public int maxShurikens;
     public int shurikens;
+    public bool vb;
 
+    public int invisible = 0;
     private int i = 0;
     public int j = 0;
 
@@ -36,7 +38,8 @@ public class Knight : MonoBehaviour
 
     //When player falls from map (down) he gets a boost back up
     void OnBecameInvisible () {
-        if(this.transform.root.localPosition.y < -17 && this.transform.root.GetComponent<Knight>().isAlive){
+        if(this.transform.root.localPosition.y < -3 && isAlive && invisible == 0 && !vb){
+            invisible = 1;
             this.transform.root.GetComponent<Rigidbody2D>().velocity = new Vector3(0, 25, 0);
             this.transform.root.GetComponent<PlayerHealth>().applyDamage(25f);
         }
