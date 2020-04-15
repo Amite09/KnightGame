@@ -14,12 +14,17 @@ public class Ball : MonoBehaviour
     public bool hit;
     public string hitter;
 
-    // Start is called before the first frame update
-    void Start(){
+    public Color neutralColor;
+
+    void Awake(){
         Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), GameObject.Find("Block").GetComponent<BoxCollider2D>());
         body = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         hitter = "Nobody";
+    }
+
+    void Start(){
+        neutralColor = sr.color;
     }
 
     // Update is called once per frame
@@ -39,11 +44,16 @@ public class Ball : MonoBehaviour
             Physics2D.IgnoreCollision(GetComponent<CapsuleCollider2D>(), roller.GetComponent<BoxCollider2D>(), false);
         }
         if (col.tag == "Ground"){
-            if (this.transform.position.x < 0 && hitter != "Nobody" && hitter != "Left"){
+            if (this.transform.position.x < 0 && hitter == "Right"){
                     Helper.RightSidePoints += 1;
-            } else if (this.transform.position.x > 0 && hitter != "Nobody" && hitter != "Right") {
+                    hitter = "Nobody";
+                    sr.color = neutralColor;
+            } else if (this.transform.position.x > 0 && hitter == "Left") {
                     Helper.LeftSidePoints += 1;
+                    hitter = "Nobody";
+                    sr.color = neutralColor;
             }
+                       
         }
     } 
 
