@@ -64,6 +64,8 @@ public class Flame : MonoBehaviour
         if (col.tag == "Ground" || col.tag == "Block"){
             gameObject.SetActive(false);
             return;
+        } else if (col.transform.root.TryGetComponent(out Shuriken s) && s.Owner != this.owner){
+            s.gameObject.SetActive(false);
         }
         string colName = col.transform.root.name;
         float damage = Random.Range(5,6) * this.power;

@@ -30,21 +30,27 @@ public class PlayerHealth : MonoBehaviour
     }
     //Chech if the player is alive
     IEnumerator checkIfAlive(){
-        if(player.hp <= 0 && i == 0 && player.gameObject.activeInHierarchy){
+        if(player.hp == 0 && i == 0){
             i = 1;
             this.GetComponent<BoxCollider2D>().enabled = false;
             player.lives = (player.lives > 0 ? player.lives - 1 : 0);
             player.isAlive = false;
             anim.Play("Die");
             yield return new WaitForSeconds(0.7f);
-            this.GetComponent<Knight>().invisible = 0;
+            this.GetComponent<Knight>().invisible = false;
             i = 0;
-        }  
+        } else {
+            yield return new WaitForSeconds(0.2f);
+            this.GetComponent<Knight>().invisible = false;
+        }
+        
     }
 
     //apply damage to a player
     public void applyDamage(float damage){
         player.hp = (player.hp - damage < 0 ? 0 : player.hp - damage);
-        StartCoroutine(checkIfAlive());
+        if (player.gameObject.activeInHierarchy){
+            StartCoroutine(checkIfAlive());
+        }
     }
 }

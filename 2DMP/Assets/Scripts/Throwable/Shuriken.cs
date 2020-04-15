@@ -66,12 +66,12 @@ public class Shuriken : MonoBehaviour
     }
 
     void OnTriggerEnter2D(Collider2D col){
-        if (col.tag == "Ground" || col.tag == "Block"){
+        if (col.tag == "Ground" || col.tag == "Block" || (col.transform.root.TryGetComponent(out Shuriken s) && s.owner != this.owner)){
             gameObject.SetActive(false);
             return;
         }
         float damage = Random.Range(3,6) * this.power;       
-        if (col.transform.root.TryGetComponent(out Knight enemy) && col.transform.root.name != this.owner){
+        if (col.transform.root.TryGetComponent(out Knight enemy) && enemy.name != this.owner){
             enemy.GetComponent<PlayerHealth>().applyDamage(damage);
             gameObject.SetActive(false);
         }
