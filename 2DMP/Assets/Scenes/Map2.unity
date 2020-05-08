@@ -745,6 +745,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4876679563470235262, guid: a71349f05221472449091939decee99f,
         type: 3}
+    - target: {fileID: 3076521753965768013, guid: b36f649f57b64104b9017d268667aeef,
+        type: 3}
+      propertyPath: pickables.Array.data[5]
+      value: 
+      objectReference: {fileID: 3337328165866761437, guid: 12d938269cbb0fe4e9bc3742ecca8d3a,
+        type: 3}
     - target: {fileID: 3076521753965768014, guid: b36f649f57b64104b9017d268667aeef,
         type: 3}
       propertyPath: m_LocalPosition.x
